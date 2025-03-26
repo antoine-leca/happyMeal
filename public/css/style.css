@@ -1,0 +1,53 @@
+.headpage{
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+    padding-top: 3%;
+    p{
+        text-align: justify;
+        width: 20%;
+        letter-spacing: 2%;
+        align-self: center;
+    }
+}
+
+.title{
+    font-size: 36px;
+    letter-spacing: 2%;
+}
+
+.moments{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.accordeon{
+    display: flex;
+   margin: 10%;
+    img{
+        height: 150px;
+        width: 150px;
+    }
+    details{
+        display: flex;
+        font-size: small;
+    
+    }
+
+    p{
+        width: 30%;
+    }
+
+}
+
+
+
+
