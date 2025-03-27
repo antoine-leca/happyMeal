@@ -58,15 +58,16 @@
 
 /* POLICES */
 
-.title-font {
-    font-family: var(--title-font);
-}
 
-.main-font {
-    font-family: var(--main-font);
+h1 {
+    font-family: var(--title-font);
+    color: var(--bg-dark);
+    font-size:xx-large ;
 }
 
 body {
+    height: 100vh;
+    font-family: var(--main-font);
     header {
         font-family: var(--main-font);
         letter-spacing: 1px;
@@ -78,8 +79,8 @@ body {
             background-color: var(--bg-main-hover);
         }
     }
-    main {
-        height: 80%;
+    main {  
+        height: 100%;
         background-color: var(--bg-sec);
     }
     footer {
