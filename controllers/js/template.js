@@ -11,7 +11,7 @@ const header = `<header class="bg-main border-gray-200 dark:bg-main">
                   <a id="headerLeftLink" href="#" class="h-full flex items-center py-2 px-3 text-xl title-font">Recettes</a>
                 </li>
                 <li>
-                  <a id="headerLeftLink" href="#" class="h-full flex items-center py-2 px-3 text-xl title-font">Calendrier</a>
+                  <a id="headerLeftLink" href="./views/calendar.html" class="h-full flex items-center py-2 px-3 text-xl title-font">Calendrier</a>
                 </li>
             </ul>
         </section>
