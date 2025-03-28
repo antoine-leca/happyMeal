@@ -1,120 +1,201 @@
-
 const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const DAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-function app() {
+function calendarApp() {
     return {
-        month: '',
-        year: '',
-        no_of_days: [],
-        blankdays: [],
-        days: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+        month: 0,
+        year: 0,
+        daysInMonth: [],
+        blankDays: [],
+        daysOfWeek: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
+        monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+        recipes: [],
+        selectedRecipes: {},
+        isModalOpen: false,
+        selectedDate: null,
+        selectedType: 'Entrée',
+        selectedRecipe: '',
 
-        events: [
-            {
-                event_date: new Date(2020, 3, 1),
-                event_title: "April Fool's Day",
-                event_theme: 'blue'
-            },
-
-            {
-                event_date: new Date(2020, 3, 10),
-                event_title: "Birthday",
-                event_theme: 'red'
-            },
-
-            {
-                event_date: new Date(2020, 3, 16),
-                event_title: "Upcoming Event",
-                event_theme: 'green'
-            }
-        ],
-        event_title: '',
-        event_date: '',
-        event_theme: 'blue',
-
-        themes: [
-            {
-                value: "blue",
-                label: "Blue Theme"
-            },
-            {
-                value: "red",
-                label: "Red Theme"
-            },
-            {
-                value: "yellow",
-                label: "Yellow Theme"
-            },
-            {
-                value: "green",
-                label: "Green Theme"
-            },
-            {
-                value: "purple",
-                label: "Purple Theme"
-            }
-        ],
-
-        openEventModal: false,
-
-        initDate() {
-            let today = new Date();
+        init() {
+            const today = new Date();
             this.month = today.getMonth();
             this.year = today.getFullYear();
-            this.datepickerValue = new Date(this.year, this.month, today.getDate()).toDateString();
+            this.loadRecipes();
+            this.calculateDays();
         },
 
-        isToday(date) {
-            const today = new Date();
-            const d = new Date(this.year, this.month, date);
-
-            return today.toDateString() === d.toDateString() ? true : false;
+        loadRecipes() {
+            fetch("../public/data.json")
+                .then(response => response.json())
+                .then(data => {
+                    this.recipes = data.recettes;
+                })
+                .catch(error => console.error("Erreur lors du chargement des recettes :", error));
         },
 
-        showEventModal(date) {
-            this.openEventModal = true;
-            this.event_date = new Date(this.year, this.month, date).toDateString();
+        calculateDays() {
+            const daysInMonth = new Date(this.year, this.month + 1, 0).getDate();
+            const firstDayOfMonth = new Date(this.year, this.month, 1).getDay();
+            this.blankDays = Array(firstDayOfMonth).fill(null);
+            this.daysInMonth = Array.from({ length: daysInMonth }, (_, i) => i + 1);
         },
 
-        addEvent() {
-            if (this.event_title == '') {
-                return;
+        prevMonth() {
+            if (this.month === 0) {
+                this.month = 11;
+                this.year--;
+            } else {
+                this.month--;
             }
-
-            this.events.push({
-                event_date: this.event_date,
-                event_title: this.event_title,
-                event_theme: this.event_theme
-            });
-
-            console.log(this.events);
-
-         
-            this.event_title = '';
-            this.event_date = '';
-            this.event_theme = 'blue';
-
-            this.openEventModal = false;
+            this.calculateDays();
         },
 
-        getNoOfDays() {
-            let daysInMonth = new Date(this.year, this.month + 1, 0).getDate();
-
-            
-            let dayOfWeek = new Date(this.year, this.month).getDay();
-            let blankdaysArray = [];
-            for ( var i=1; i <= dayOfWeek; i++) {
-                blankdaysArray.push(i);
+        nextMonth() {
+            if (this.month === 11) {
+                this.month = 0;
+                this.year++;
+            } else {
+                this.month++;
             }
+            this.calculateDays();
+        },
 
-            let daysArray = [];
-            for ( var i=1; i <= daysInMonth; i++) {
-                daysArray.push(i);
+        openModal(date) {
+            this.selectedDate = date;
+            this.isModalOpen = true;
+        },
+
+        closeModal() {
+            this.isModalOpen = false;
+            this.selectedRecipe = '';
+            this.selectedType = 'Entrée';
+        },
+
+        addRecipe() {
+            if (!this.selectedRecipes[this.selectedDate]) {
+                this.selectedRecipes[this.selectedDate] = [];
             }
-            
-            this.blankdays = blankdaysArray;
-            this.no_of_days = daysArray;
+            if (this.selectedRecipes[this.selectedDate].length < 3) {
+                this.selectedRecipes[this.selectedDate].push(`${this.selectedType}: ${this.selectedRecipe}`);
+                this.closeModal();
+            } else {
+                alert("Vous ne pouvez ajouter que 3 recettes par jour.");
+            }
         }
-    }
+    };
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const calendar = document.getElementById("calendar");
+    const monthYear = document.getElementById("monthYear");
+    const prevMonth = document.getElementById("prevMonth");
+    const nextMonth = document.getElementById("nextMonth");
+    const recipeModal = document.getElementById("recipeModal");
+    const closeModal = document.getElementById("closeModal");
+    const recipeType = document.getElementById("recipeType");
+    const recipeName = document.getElementById("recipeName");
+    const addRecipe = document.getElementById("addRecipe");
+
+    let currentMonth = new Date().getMonth();
+    let currentYear = new Date().getFullYear();
+    let selectedDate = null;
+    let recipes = [];
+    let selectedRecipes = {};
+
+    // Charger les recettes depuis le fichier JSON
+    fetch("../public/data.json")
+        .then(response => response.json())
+        .then(data => {
+            recipes = data.recettes;
+            recipes.forEach(recipe => {
+                const option = document.createElement("option");
+                option.value = recipe.nom;
+                option.textContent = recipe.nom;
+                recipeName.appendChild(option);
+            });
+        })
+        .catch(error => console.error("Erreur lors du chargement des recettes :", error));
+
+    // Générer le calendrier
+    function generateCalendar() {
+        calendar.innerHTML = "";
+        const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+        const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+        // Ajouter les jours vides
+        for (let i = 0; i < firstDay; i++) {
+            const emptyCell = document.createElement("div");
+            calendar.appendChild(emptyCell);
+        }
+
+        // Ajouter les jours du mois
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dayCell = document.createElement("div");
+            dayCell.textContent = day;
+            dayCell.addEventListener("click", () => openModal(day));
+            calendar.appendChild(dayCell);
+
+            // Afficher les recettes sélectionnées
+            if (selectedRecipes[`${currentYear}-${currentMonth}-${day}`]) {
+                selectedRecipes[`${currentYear}-${currentMonth}-${day}`].forEach(recipe => {
+                    const recipeDiv = document.createElement("div");
+                    recipeDiv.textContent = recipe;
+                    recipeDiv.classList.add("recipe");
+                    dayCell.appendChild(recipeDiv);
+                });
+            }
+        }
+
+        monthYear.textContent = `${new Date(currentYear, currentMonth).toLocaleString("fr-FR", {
+            month: "long",
+        })} ${currentYear}`;
+    }
+
+    // Ouvrir le modal
+    function openModal(day) {
+        selectedDate = `${currentYear}-${currentMonth}-${day}`;
+        recipeModal.style.display = "flex";
+    }
+
+    // Fermer le modal
+    closeModal.addEventListener("click", () => {
+        recipeModal.style.display = "none";
+    });
+
+    // Ajouter une recette
+    addRecipe.addEventListener("click", () => {
+        const type = recipeType.value;
+        const name = recipeName.value;
+        if (!selectedRecipes[selectedDate]) {
+            selectedRecipes[selectedDate] = [];
+        }
+        if (selectedRecipes[selectedDate].length < 3) {
+            selectedRecipes[selectedDate].push(`${type}: ${name}`);
+            recipeModal.style.display = "none";
+            generateCalendar();
+        } else {
+            alert("Vous ne pouvez ajouter que 3 recettes par jour.");
+        }
+    });
+
+    // Navigation du mois
+    prevMonth.addEventListener("click", () => {
+        currentMonth--;
+        if (currentMonth < 0) {
+            currentMonth = 11;
+            currentYear--;
+        }
+        generateCalendar();
+    });
+
+    nextMonth.addEventListener("click", () => {
+        currentMonth++;
+        if (currentMonth > 11) {
+            currentMonth = 0;
+            currentYear++;
+        }
+        generateCalendar();
+    });
+
+    generateCalendar();
+});
