@@ -58,17 +58,15 @@
 
 /* POLICES */
 
-.title-font {
-    font-family: var(--title-font);
-}
 
-.main-font {
-    font-family: var(--main-font);
+h1 {
+    font-family: var(--title-font);
+    color: var(--bg-dark);
+    font-size:xx-large ;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+    height: 100vh;
     font-family: var(--main-font);
     header {
         letter-spacing: 1px;
@@ -80,7 +78,8 @@ body {
             background-color: var(--bg-main-hover);
         }
     }
-    main {
+    main {  
+        height: 100%;
         background-color: var(--bg-sec);
     }
     footer {
