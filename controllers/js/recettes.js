@@ -107,6 +107,18 @@ fetch("../public/data.json")
                         modalSteps.appendChild(stepItem);
                     });
                 });
+
+                const icons = document.createElement("div");
+                icons.setAttribute("class", "icons");
+                divBtn.appendChild(icons);
+
+                const icon1 = document.createElement("i");
+                icon1.setAttribute("class", "fa-solid fa-plus");
+                icons.appendChild(icon1);
+
+                const icon2 = document.createElement("i");
+                icon2.setAttribute("class", "fa-solid fa-heart");
+                icons.appendChild(icon2);
             }
         }
 
@@ -130,7 +142,7 @@ fetch("../public/data.json")
             for (let i = 1; i <= totalPages; i++) {
                 const bouton = document.createElement("button");
                 bouton.textContent = i;
-                bouton.className = `px-3 py-1 rounded ${i === pageActuelle ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700"}`;
+                bouton.className = `px-3 py-1 rounded ${i === pageActuelle ? "bg-main text-white" : "bg-gray-200 text-gray-700"}`;
                 bouton.addEventListener("click", () => {
                     pageActuelle = i;
                     afficherRecettes(pageActuelle);
