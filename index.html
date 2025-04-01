@@ -6,7 +6,6 @@
     <meta name="keywords" content="Recettes en ligne">
     <meta name="author" content="Marvin, Antoine">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- liens css -->
     <link rel="stylesheet" href="./public/css/root.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,50 +15,62 @@
     <link rel="stylesheet" href="./public/css/style.css">
     <script src="./controllers/js/template.js" defer></script>
    
-    
     <title>Tasty</title>
 </head>
 <body class="h-screen">
     <header>
         <div id="header"></div>  
     </header> 
-    <main class="main-font">
+    <main>
         <section class="headpage">
             <img src="./public/assets/firstimg.png" alt="firstimg">
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices 
             </p>
     </section>
-    <section class="moments title-font">
-    <div class="title">
         <h1>
     Recettes du moment
-        <h1>
-        <div class="accordeon main-font">
-
-            <div>
-                <details>
-                <summary><img src="./public/assets/foodone.png" alt="foodone"></summary>
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor amet eligendi accusamus natus ea. Corrupti aliquid earum provident rem, vero commodi voluptates explicabo impedit ducimus dolores itaque. Veniam, quibusdam ratione.
-                </p>
-            </details>
-        </div>
-
-        <div>
-            <details>
-                <summary><img src="./public/assets/foodtwo.png" alt="foodtwo"></summary>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, porro laudantium iure quas illum unde reiciendis error exercitationem obcaecati temporibus distinctio deserunt similique, molestias in placeat numquam quae aliquam quidem.
-            </details>
-        </div>
-        
-        <div>
-            <details>
-                <summary><img src="./public/assets/foodthree.png" alt="foodthree"></summary>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, porro laudantium iure quas illum unde reiciendis error exercitationem obcaecati temporibus distinctio deserunt similique, molestias in placeat numquam quae aliquam quidem.
-            </details>
-        </div>
-    </section>
+        </h1>
+        <section class="container">
+            <div class="category_container">
+              <div class="content">
+                <img src="./public/assets/blurfoodone.png" width="content" height="content"  />
+                <img src="./public/assets/foodone.png" class="profile_image" alt="Profile" />
+                <div class="wrapper">           
+                  <div class="profile_quote">
+                    <a href="index.html"><button class="seemore">Voir plus</button></a>
+                    <a href="#" class="flex items-center py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent text-black md:p-0 dark:text-black text-hover-sec">
+                      <span class="material-symbols-outlined">favorite</span>
+                  </div>
+                </div>
+              </div>
+              <div class="content">
+                <img src="./public/assets/blurfoodtwo.png" width="content" height="content"/>
+                <img src="./public/assets/foodtwo.png" class="profile_image" alt="Profile" />
+                <div class="wrapper">           
+                  <div class="profile_quote">
+                    <a href="index.html"><button class="seemore">Voir plus</button></a>
+                    <a href="#" class="flex items-center py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent text-black md:p-0 dark:text-black text-hover-sec">
+                      <span class="material-symbols-outlined">favorite</span>
+                  </div>  
+                </div>
+              </div>
+              <div class="content">
+                <img src="./public/assets/blurfoodthree.png" width="content" height="content" />
+                <img src="./public/assets/foodthree.png" class="profile_image" alt="Profile" />
+                <div class="wrapper">           
+                  <div class="profile_quote">
+                    <a href="index.html"><button class="seemore">Voir plus</button></a>
+                    <a href="#" class="flex items-center py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent text-black md:p-0 dark:text-black text-hover-sec">
+                      <span class="material-symbols-outlined">favorite</span>
+                    </a>
+                  </svg>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+          </section>
     </main>
 
     <footer>
