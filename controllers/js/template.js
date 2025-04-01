@@ -3,15 +3,15 @@ const header = `<header class="bg-main border-gray-200 dark:bg-main">
   <nav class="mx-4">
       <div class="w-full flex flex-wrap items-center justify-between">
         <section class="flex gap-16">
-          <a href="/./index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-              <img src="../public/assets/logotasty.png" class="h-20" alt="Flowbite Logo" />
+          <a href="/happyMeal/index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img src="/happyMeal/public/assets/logotasty.png" class="h-20" alt="Flowbite Logo" />
           </a>
           <ul id="headerLinks" class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 bg-main md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
-                  <a id="headerLeftLink" href="/views/recettes.html" class="h-full flex items-center py-2 px-3 text-xl title-font">Recettes</a>
+                  <a id="headerLeftLink" href="/happyMeal/views/recettes.html" class="h-full flex items-center py-2 px-3 text-xl title-font">Recettes</a>
                 </li>
                 <li>
-                  <a id="headerLeftLink" href="/views/calendar.html" class="h-full flex items-center py-2 px-3 text-xl title-font">Calendrier</a>
+                  <a id="headerLeftLink" href="/happyMeal/views/calendar.html" class="h-full flex items-center py-2 px-3 text-xl title-font">Calendrier</a>
                 </li>
             </ul>
         </section>
@@ -50,7 +50,7 @@ const header = `<header class="bg-main border-gray-200 dark:bg-main">
             </div>
             <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-main md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
             <li class="flex items-center">
-              <a href="#" class="flex items-center py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent text-black md:p-0 dark:text-black text-hover-sec">
+              <a href="/happyMeal/views/favoris.html" class="flex items-center py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent text-black md:p-0 dark:text-black text-hover-sec">
                 <span class="material-symbols-outlined">favorite</span>
               </a>
             </li>
@@ -72,8 +72,8 @@ const footer = `
     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0 w-full">
-            <a href="/./index.html" class="flex items-center w-full">
-                <img src="../public/assets/logotasty.png" class="w-64 h-auto me-3" alt="FlowBite Logo" />
+            <a href="/happyMeal/index.html" class="flex items-center w-full">
+                <img src="/happyMeal/public/assets/logotasty.png" class="w-64 h-auto me-3" alt="FlowBite Logo" />
             </a>
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -81,10 +81,10 @@ const footer = `
                   <h2 class="mb-6 text-sm font-semibold text-color-sec uppercase dark:text-white">Liens</h2>
                   <ul class="text-white dark:text-white font-medium">
                       <li class="mb-4">
-                          <a href="/views/recettes.html" class="hover:underline">Recettes</a>
+                          <a href="happyMeal/views/recettes.html" class="hover:underline">Recettes</a>
                       </li>
                       <li>
-                          <a href="/views/calendar.html" class="hover:underline">Calendrier</a>
+                          <a href="happyMeal/views/calendar.html" class="hover:underline">Calendrier</a>
                       </li>
                   </ul>
               </div>
@@ -95,7 +95,7 @@ const footer = `
                           <a href="#" class="hover:underline ">Panier</a>
                       </li>
                       <li>
-                          <a href="#" class="hover:underline">Favoris</a>
+                          <a href="happyMeal/views/favoris.html" class="hover:underline">Favoris</a>
                       </li>
                   </ul>
               </div>
