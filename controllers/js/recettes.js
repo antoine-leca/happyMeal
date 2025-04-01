@@ -137,7 +137,7 @@ fetch("../public/data.json")
         function genererPagination() {
             paginationContainer.innerHTML = "";
 
-            const totalPages = Math.ceil(data.recettes.length / recettesParPage);
+            const totalPages = Math.ceil(data.recettes.length / recettesParPage);   
 
             for (let i = 1; i <= totalPages; i++) {
                 const bouton = document.createElement("button");
