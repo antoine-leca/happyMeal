@@ -1,38 +1,3 @@
-// const cards = document.getElementsByClassName("divCard");
-
-// for (let card of cards) {
-//     const divTitle = card.getElementsByClassName("divTI")[0];
-//     if (divTitle) {
-//         const title = divTitle.querySelector("span");
-//         const ingredients = divTitle.querySelector("p");
-
-//         if (title) {
-//             title.textContent = "abc";
-//         }
-        
-//         if (ingredients) {
-//             ingredients.textContent = "def";
-//         }
-
-//         console.log(divTitle, title, ingredients);
-//     }
-// }
-
-// function genererateCard(recettes) {
-//     const container = document.querySelector(".bigsection");
-//     const templateCard = document.querySelector(".divCard");
-
-//     templateCard.remove();
-
-//     recettes.forEach(recette => {
-//         const card = templateCard.cloneNode(true);
-
-//         card.querySelector(".divTI span").textContent =  recette.nom;
-//         card.querySelector(".divTI p").textContent = recette.ingredients.map(ing => ing.quantite).
-//     });
-// }
-
-
 fetch("../public/data.json")
     .then(response => {
         if (!response.ok) {
@@ -135,6 +100,18 @@ fetch("../public/data.json")
                         modalSteps.appendChild(stepItem);
                     });
                 });
+
+                const icons = document.createElement("div");
+                icons.setAttribute("class", "icons");
+                divBtn.appendChild(icons);
+
+                const icon1 = document.createElement("i");
+                icon1.setAttribute("class", "fa-solid fa-plus");
+                icons.appendChild(icon1);
+
+                const icon2 = document.createElement("i");
+                icon2.setAttribute("class", "fa-solid fa-heart");
+                icons.appendChild(icon2);
             }
         }
 
@@ -146,7 +123,7 @@ fetch("../public/data.json")
             for (let i = 1; i <= totalPages; i++) {
                 const bouton = document.createElement("button");
                 bouton.textContent = i;
-                bouton.className = `px-3 py-1 rounded ${i === pageActuelle ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700"}`;
+                bouton.className = `px-3 py-1 rounded ${i === pageActuelle ? "bg-main text-white" : "bg-gray-200 text-gray-700"}`;
                 bouton.addEventListener("click", () => {
                     pageActuelle = i;
                     afficherRecettes(pageActuelle);
