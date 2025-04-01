@@ -3,15 +3,15 @@ const header = `<header class="bg-main border-gray-200 dark:bg-main">
   <nav class="mx-4">
       <div class="w-full flex flex-wrap items-center justify-between">
         <section class="flex gap-16">
-          <a href="/./index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-              <img src="../public/assets/logotasty.png" class="h-20" alt="Flowbite Logo" />
+          <a href="/happyMeal/index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img src="/happyMeal/public/assets/logotasty.png" class="h-20" alt="Flowbite Logo" />
           </a>
           <ul id="headerLinks" class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 bg-main md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
-                  <a id="headerLeftLink" href="/views/recettes.html" class="h-full flex items-center py-2 px-3 text-xl title-font">Recettes</a>
+                  <a id="headerLeftLink" href="/happyMeal/views/recettes.html" class="h-full flex items-center py-2 px-3 text-xl title-font">Recettes</a>
                 </li>
                 <li>
-                  <a id="headerLeftLink" href="/views/calendar.html" class="h-full flex items-center py-2 px-3 text-xl title-font">Calendrier</a>
+                  <a id="headerLeftLink" href="/happyMeal/views/calendar.html" class="h-full flex items-center py-2 px-3 text-xl title-font">Calendrier</a>
                 </li>
             </ul>
         </section>
@@ -73,7 +73,7 @@ const footer = `
         <div class="md:flex md:justify-between">
           <div class="mb-6 md:mb-0 w-full">
             <a href="/./index.html" class="flex items-center w-full">
-                <img src="../public/assets/logotasty.png" class="w-64 h-auto me-3" alt="FlowBite Logo" />
+                <img src="/happyMeal/public/assets/logotasty.png" class="w-64 h-auto me-3" alt="FlowBite Logo" />
             </a>
           </div>
           <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
@@ -81,10 +81,10 @@ const footer = `
                   <h2 class="mb-6 text-sm font-semibold text-color-sec uppercase dark:text-white">Liens</h2>
                   <ul class="text-white dark:text-white font-medium">
                       <li class="mb-4">
-                          <a href="/views/recettes.html" class="hover:underline">Recettes</a>
+                          <a href="/happyMeal/views/recettes.html" class="hover:underline">Recettes</a>
                       </li>
                       <li>
-                          <a href="/views/calendar.html" class="hover:underline">Calendrier</a>
+                          <a href="/happyMeal/views/calendar.html" class="hover:underline">Calendrier</a>
                       </li>
                   </ul>
               </div>

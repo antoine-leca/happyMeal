@@ -31,7 +31,7 @@ fetch("../public/data.json")
                 bigsection.appendChild(card);
 
                 const cardImg = document.createElement("img");
-                cardImg.setAttribute("src", "../public/assets/freepik__upload__76256.png");
+                cardImg.setAttribute("src", recette.images);
                 card.appendChild(cardImg);
 
                 const rCard = document.createElement("div");
