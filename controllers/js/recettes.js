@@ -65,6 +65,13 @@ fetch("../public/data.json")
                 btn.setAttribute("type", "button");
                 cta.appendChild(btn);
 
+                // Ajouter un bouton pour ajouter aux favoris
+                const favorisIcon = document.createElement("i");
+                favorisIcon.className = "fa-regular fa-heart";
+                favorisIcon.style.cursor = "pointer";
+                favorisIcon.addEventListener("click", () => ajouterAuxFavoris(recette));
+                divBtn.appendChild(favorisIcon);
+
                 btn.addEventListener("click", () => {
                     const modal = document.getElementById("medium-modal");
                     if (modal) {
@@ -115,6 +122,18 @@ fetch("../public/data.json")
             }
         }
 
+        // Fonction pour ajouter une recette aux favoris
+        function ajouterAuxFavoris(recette) {
+            const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+            if (!favorites.some(fav => fav.nom === recette.nom)) {
+                favorites.push(recette);
+                localStorage.setItem("favorites", JSON.stringify(favorites));
+                alert("Recette ajoutée aux favoris !");
+            } else {
+                alert("Cette recette est déjà dans vos favoris.");
+            }
+        }
+
         function genererPagination() {
             paginationContainer.innerHTML = "";
 
@@ -140,12 +159,6 @@ fetch("../public/data.json")
     .catch(error => {
         console.error("Erreur :", error);
     });
-
-
-
-
-
-
 
 
 // req.onload = function () {
