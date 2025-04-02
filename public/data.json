@@ -2,6 +2,7 @@
    "recettes":[
       {
          "nom":"Poulet rôti aux herbes",
+         "images": "../public/assets/poulet.png",
          "categorie":"Plat principal",
          "temps_preparation":"1 heure",
          "ingredients":[
@@ -32,6 +33,7 @@
       },
       {
          "nom":"Salade de quinoa aux légumes grillés",
+         "images": "../public/assets/quinoa-salad.jpg",
          "categorie":"Entrée",
          "temps_preparation":"30 minutes",
          "ingredients":[
@@ -70,6 +72,7 @@
       },
       {
          "nom":"Tarte aux pommes",
+         "images": "../public/assets/tarte-pommesR.jpg",
          "categorie":"Dessert",
          "temps_preparation":"1 heure",
          "ingredients":[
@@ -110,6 +113,7 @@
       },
       {
          "nom":"Soupe de lentilles",
+         "images": "../public/assets/soupe-lentille.jpg",
          "categorie":"Entrée",
          "temps_preparation":"1 heure",
          "ingredients":[
@@ -150,6 +154,7 @@
       },
       {
          "nom":"Pâtes Carbonara",
+         "images": "../public/assets/carbonara.jpg",
          "categorie":"Plat principal",
          "temps_preparation":"20 minutes",
          "ingredients":[
@@ -191,6 +196,7 @@
       },
       {
          "nom":"Risotto aux champignons",
+         "images": "../public/assets/risotto.jpg",
          "categorie":"Plat principal",
          "temps_preparation":"40 minutes",
          "ingredients":[
@@ -234,6 +240,7 @@
       },
       {
          "nom":"Salade de fruits frais",
+         "images": "../public/assets/salade-de-fruits.jpg",
          "categorie":"Dessert",
          "temps_preparation":"20 minutes",
          "ingredients":[
@@ -265,6 +272,7 @@
       },
       {
          "nom":"Ratatouille provençale",
+         "images": "../public/assets/ratatouille.jpg",
          "categorie":"Plat principal",
          "temps_preparation":"1 heure",
          "ingredients":[
@@ -306,6 +314,7 @@
       },
       {
          "nom":"Salade César",
+         "images": "../public/assets/césar.jpg",
          "categorie":"Entrée",
          "temps_preparation":"20 minutes",
          "ingredients":[
@@ -345,6 +354,7 @@
       },
       {
          "nom":"Risotto aux champignons",
+         "images": "../public/assets/risotto.jpg",
          "categorie":"Plat principal",
          "temps_preparation":"40 minutes",
          "ingredients":[
@@ -388,6 +398,7 @@
       },
       {
          "nom":"Muffins aux myrtilles",
+         "images": "../public/assets/muffin.jpg",
          "categorie":"Dessert",
          "temps_preparation":"30 minutes",
          "ingredients":[
@@ -429,6 +440,7 @@
       },
       {
          "nom":"Lasagnes végétariennes",
+         "images": "../public/assets/lasagnes-vg.png",
          "categorie":"Plat principal",
          "temps_preparation":"1 heure 30 minutes",
          "ingredients":[
@@ -471,6 +483,7 @@
       },
       {
          "nom":"Salade niçoise",
+         "images": "../public/assets/salade-niçoise.jpg",
          "categorie":"Entrée",
          "temps_preparation":"20 minutes",
          "ingredients":[
@@ -514,6 +527,7 @@
       },
       {
          "nom":"Tiramisu",
+         "images": "../public/assets/tiramisu.jpg",
          "categorie":"Dessert",
          "temps_preparation":"30 minutes (+ temps de repos)",
          "ingredients":[
