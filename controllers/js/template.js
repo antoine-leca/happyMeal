@@ -50,8 +50,8 @@ const header = `<header class="bg-main border-gray-200 dark:bg-main">
             </div>
             <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-main md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
             <li class="flex items-center">
-              <a href="/happyMeal/views/favoris.html" class="flex items-center py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent text-black md:p-0 dark:text-black text-hover-sec">
-                <span class="material-symbols-outlined">favorite</span>
+              <a href="/happyMeal/views/favoris.html" class="flex items-center py-2 px-3 rounded-sm hover:bg-main-hover md:hover:bg-main-hover text-black md:p-0 dark:text-black text-hover-sec">
+                <i class="fa-solid fa-heart"></i>
               </a>
             </li>
               <li>
