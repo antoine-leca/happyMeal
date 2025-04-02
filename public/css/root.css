@@ -79,6 +79,11 @@ body {
             color: white;
             background-color: var(--bg-main-hover);
         }
+        a {
+            i {
+                font-size: 24px;
+            }
+        }
     }
     main {  
         background-color: var(--bg-sec);
