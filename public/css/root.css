@@ -96,3 +96,24 @@ body {
     }
     
 }
+
+.modalContentPanel{
+    background-color: var(--bg-sec);
+    color: var(--bg-sec);
+    font-family: var(--main-font);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    table{
+        background-color: var(--bg-main);
+    }
+    sr-only{
+        color: var(--bg-main);
+    }
+#prevPage{
+    color: var(--bg-main);
+}
+
+#nextPage{
+    color: var(--bg-main);
+
+}
+}
