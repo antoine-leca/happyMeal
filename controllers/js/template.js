@@ -58,13 +58,12 @@ const header = `<header class="bg-main border-gray-200 dark:bg-main">
                 <i class="fa-solid fa-heart"></i>
               </a>
             </li>
+            <li class="flex items-center">
+              <a data-modal-target="default-modal" data-modal-toggle="default-modal" class="flex items-center py-2 px-3 rounded-sm hover:bg-main-hover md:hover:bg-main-hover text-black md:p-0 dark:text-black text-hover-sec">
+                <i class="fa-solid fa-basket-shopping"></i>
+              </a>
+            </li>
               <li>
-                
-                        <!-- Modal toggle -->
-                        <button data-modal-target="default-modal" data-modal-toggle="default-modal" type="button">
-                            <span class="material-symbols-outlined text-black">shopping_basket</span>
-                          </button>
-                          
                           <!-- Main modal -->
                           <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)]">
                               <div class="bg-red-500 flex p-5">
@@ -124,7 +123,48 @@ const header = `<header class="bg-main border-gray-200 dark:bg-main">
                               </div>
                           </div>
                       </div>
-  
+
+
+                      <section id="medium-modal" tabindex="-1" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 overflow-x-hidden overflow-y-auto h-screen">
+                        <div class="relative w-full max-w-lg max-h-full">
+                            <!-- Modal content -->
+                            <div class="relative rounded-lg shadow-sm">
+                                <!-- Modal header -->
+                                <div id="modal-header" class="bg-main flex items-center justify-between p-2 rounded-t">
+                                    <h3 id="modal-title" class="text-xl font-medium text-color-sec">
+                                        <!-- Titre de la recette -->
+                                    </h3>
+                                    <button type="button" class="text-color-sec bg-transparent rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="medium-modal">
+                                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                                        </svg>
+                                        <span class="sr-only">Close modal</span>
+                                    </button>
+                                </div>
+                                <!-- Modal body -->
+                                <div id="modal-body" class="bg-sec p-4 md:p-5 space-y-4">
+                                    <img id="modal-image" src="" alt="Image de la recette" class="w-full h-auto rounded-lg">
+                                    <p id="modal-category" class="text-base leading-relaxed text-gray-black">
+                                        <!-- Catégorie -->
+                                    </p>
+                                    <p id="modal-time" class="text-base leading-relaxed text-gray-black">
+                                        <!-- Temps de préparation -->
+                                    </p>
+                                    <p id="modal-ingredients" class="text-base leading-relaxed text-gray-black">
+                                        <!-- Liste des ingrédients -->
+                                    </p>
+                                    <ol id="modal-steps" class="list-decimal pl-5 text-base leading-relaxed text-black">
+                                        <!-- Étapes de la recette -->
+                                    </ol>
+                                </div>
+                                <!-- Modal footer -->
+                                <hr>
+                                <div id="modal-footer" class="bg-sec flex items-center p-2 rounded-b">
+                                    <button data-modal-hide="medium-modal" type="button" class="text-color-sec focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-blue-800">Fermer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
               </li>
             </ul>
           </div>
