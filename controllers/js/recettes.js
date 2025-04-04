@@ -112,13 +112,21 @@ fetch("/happyMeal/public/data.json")
 
                 const icon1 = document.createElement("i");
                 icon1.setAttribute("class", "fa-solid fa-plus");
+                icon1.style.cursor = "pointer";
+                icon1.addEventListener("click", () => {
+                    ajouterALaListe(recette);   
+                });
                 icons.appendChild(icon1);
 
                 const icon2 = document.createElement("i");
-                icon2.className = "fa-solid fa-heart";
+                icon2.setAttribute("class", "fa-solid fa-heart");
                 icon2.style.cursor = "pointer";
-                icon2.addEventListener("click", () => ajouterAuxFavoris(recette));
+                icon2.addEventListener("click", () => {
+                    ajouterAuxFavoris(recette);
+                });
                 icons.appendChild(icon2);
+
+                
             }
         }
 
@@ -131,6 +139,23 @@ fetch("/happyMeal/public/data.json")
                 alert("Recette ajoutée aux favoris !");
             } else {
                 alert("Cette recette est déjà dans vos favoris.");
+            }
+        }
+
+        // Fonction pour ajouter une recette à la liste de courses
+        function ajouterALaListe(recette) {
+            const shoppingList = JSON.parse(localStorage.getItem("shoppingList")) || []; // Récupère la liste existante
+
+            // Vérifie si la recette est déjà dans la liste
+            if (!shoppingList.some(item => item.nom === recette.nom)) {
+                shoppingList.push({
+                    nom: recette.nom,
+                    ingredients: recette.ingredients.map(ingredient => ingredient.nom)
+                });
+                localStorage.setItem("shoppingList", JSON.stringify(shoppingList)); // Met à jour localStorage
+                alert(`La recette "${recette.nom}" a été ajoutée à la liste de courses.`);
+            } else {
+                alert(`La recette "${recette.nom}" est déjà dans la liste de courses.`);
             }
         }
 
@@ -151,6 +176,22 @@ fetch("/happyMeal/public/data.json")
                 paginationContainer.appendChild(bouton);
             }
         }
+
+        // Ajout de l'événement sur l'icône "fa-plus"
+        const iconsPlus = document.querySelectorAll(".fa-solid.fa-plus");
+        iconsPlus.forEach(icon => {
+            icon.addEventListener("click", () => {
+                const recetteCard = icon.closest(".divCard"); // Trouve la carte parent
+                const recetteNom = recetteCard.querySelector("span").textContent; // Récupère le nom de la recette
+                const recette = data.recettes.find(r => r.nom === recetteNom); // Trouve la recette correspondante
+
+                if (recette) {
+                    ajouterALaListe(recette); // Ajoute la recette à la liste de courses
+                } else {
+                    console.error("Recette non trouvée :", recetteNom);
+                }
+            });
+        });
 
         // Appels de fonctions
         afficherRecettes(pageActuelle);
