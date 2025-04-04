@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
             card.setAttribute("class", "divCard");
 
             const cardImg = document.createElement("img");
-            cardImg.setAttribute("src", "../public/assets/freepik__upload__76256.png");
+            cardImg.setAttribute("src", recette.images);
             card.appendChild(cardImg);
 
             const rCard = document.createElement("div");
