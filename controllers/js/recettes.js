@@ -112,25 +112,67 @@ fetch("/happyMeal/public/data.json")
 
                 const icon1 = document.createElement("i");
                 icon1.setAttribute("class", "fa-solid fa-plus");
+                icon1.style.cursor ="pointer"
                 icons.appendChild(icon1);
 
                 const icon2 = document.createElement("i");
-                icon2.className = "fa-solid fa-heart";
+                icon2.className = "fa-regular fa-heart";
                 icon2.style.cursor = "pointer";
                 icon2.addEventListener("click", () => ajouterAuxFavoris(recette));
                 icons.appendChild(icon2);
+
+                // Ajoutez un événement click pour changer l'icône
+                
+                icon1.addEventListener("click", () => {
+                    chngimg(); // Appel de la fonction pour changer l'icône
+                    ajouterAuxFavoris(recette); // Appel de la fonction pour ajouter aux favoris
+                });
+                icons.appendChild(icon1);
+                
+                // Fonction pour changer l'icône de icon1
+                function chngimg() {
+                    icon1.classList.remove("fa-plus");
+                    icon1.classList.add("fa-check");
+                }
+
+                // Ajoutez un événement click pour changer l'icône de icon1
+                icon1.addEventListener("click", () => {
+                    chngimg(); // Change l'icône de icon1
+                    ajouterAuxFavoris(recette); // Ajoute la recette aux favoris
+                });
+
+                // Ajoutez un événement click pour changer l'icône de icon2
+                icon2.addEventListener("click", () => {
+                    chngimg2(); // Change l'icône de icon2
+                    ajouterAuxFavoris(recette); // Ajoute la recette aux favoris
+                });
+
+                // Fonction pour changer l'icône de icon2
+                function chngimg2() {
+                    icon2.classList.remove("fa-regular");
+                    icon2.classList.add("fa-solid");
+                }
             }
         }
-
+        
         // Fonction pour ajouter une recette aux favoris
         function ajouterAuxFavoris(recette) {
             const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
             if (!favorites.some(fav => fav.nom === recette.nom)) {
                 favorites.push(recette);
                 localStorage.setItem("favorites", JSON.stringify(favorites));
-                alert("Recette ajoutée aux favoris !");
+                // alert("Recette ajoutée aux favoris !");
             } else {
-                alert("Cette recette est déjà dans vos favoris.");
+                // alert("Cette recette est déjà dans vos favoris.");
+            }
+        }
+
+        function retirerDesFavoris(nomRecette) {
+            const index = favorites.findIndex(recette => recette.nom === nomRecette);
+            if (index !== -1) {
+                favorites.splice(index, 1);
+                localStorage.setItem("favorites", JSON.stringify(favorites));
+                afficherFavoris();
             }
         }
 
@@ -150,8 +192,7 @@ fetch("/happyMeal/public/data.json")
                 });
                 paginationContainer.appendChild(bouton);
             }
-        }
-        
+        }        
 
         // Appels de fonctions
         afficherRecettes(pageActuelle);
