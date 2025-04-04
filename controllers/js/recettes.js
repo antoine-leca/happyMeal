@@ -153,17 +153,7 @@ fetch("/happyMeal/public/data.json")
                 paginationContainer.appendChild(bouton);
             }
         }
-
-        var toggle = false;
-            function chngimg() {
-                if (toggle === true) {
-                    document.getElementById('imgplus').setAttribute("id", "iCard");
-                } else {
-                document.getElementById('imgplus').src = 'Images/Plus.gif';
-                alert(img); 
-                }
-                toggle = !toggle; 
-            }
+        
 
         // Appels de fonctions
         afficherRecettes(pageActuelle);
