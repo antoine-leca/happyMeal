@@ -1,7 +1,9 @@
+/* Styles globaux */
 body {
     background-color: var(--bg-sec);  
     margin: 0;
     padding: 0;
+    font-family: "Poppins", sans-serif;
 }
 
 .container {
@@ -12,17 +14,7 @@ body {
 
 .title {
     text-align: center;
-}
-
-.month-navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.month-title {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .calendar {
@@ -57,7 +49,7 @@ body {
 }
 
 .btn:hover {
-    background-color:var(--bg-main-hover);
+    background-color: var(--bg-main-hover);
 }
 
 .modal {
@@ -90,7 +82,7 @@ body {
 .day-cell {
     position: relative;
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     background-color: #fff;
     cursor: pointer;
@@ -98,38 +90,72 @@ body {
 }
 
 .day-cell:hover {
-    background-color: #f4cccc;
+    background-color: var(--bg-main-hover);
 }
 
-.holiday {
-    background-color: #ffe4e1;
-    color: #b22222;
-    font-weight: bold;
+.week-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.holiday-label {
-    display: block;
-    font-size: 0.8rem;
-    margin-top: 5px;
+.week-title {
+    font-size: 1.5rem;
+    text-align: center;
 }
 
-.recipe-dropdown {
-    margin-top: 10px;
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 0.9rem;
+#weekCalendar {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
 }
 
+/* Responsive pour tablettes */
 @media (max-width: 768px) {
-    .calendar {
-        grid-template-columns: repeat(4, 1fr);
+    #weekCalendar {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .week-title {
+        font-size: 1.2rem;
+    }
+
+    .day-cell {
+        padding: 15px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .modal-content {
+        width: 90%;
     }
 }
 
+/* Responsive pour mobiles */
 @media (max-width: 480px) {
-    .calendar {
+    #weekCalendar {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .week-title {
+        font-size: 1rem;
+    }
+
+    .day-cell {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
+    .modal-content {
+        width: 95%;
     }
 }

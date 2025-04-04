@@ -59,71 +59,19 @@ const header = `<header class="bg-main border-gray-200 dark:bg-main">
               </a>
             </li>
               <li>
-                
-                        <!-- Modal toggle -->
-                        <button data-modal-target="default-modal" data-modal-toggle="default-modal" type="button">
-                            <span class="material-symbols-outlined text-black">shopping_basket</span>
-                          </button>
-                          
-                          <!-- Main modal -->
-                          <div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)]">
-                              <div class="bg-red-500 flex p-5">
-                                  <!-- Section gauche pour la liste de courses -->
-                                  <div id="shoppingListContainer"  style="background-color: #F8EED5;" class=" shadow-lg w-1/3 hidden p-5">
-                                      <h1 class="mb-4">Liste de courses</h1>
-                                      <ul id="shoppingList" class="space-y-2">
-                                          <!-- Les ingrédients sélectionnés seront ajoutés ici -->
-                                      </ul>
-                                      <button  id="downloadPdf" class="px-4 py-2 rounded mt-4 bg-white">
-                                          Télécharger la liste
-                                      </button>
-                                  </div>
+                  <!-- Icône pour ouvrir la sidebar -->
+                  <i id="open-sidebar" class="fa-solid fa-basket-shopping fa-lg" style="color: black;"></i>
 
-                                  <!-- Modal content -->
-                                  <div class="modalContentPanel">
-                                  <div class="relative rounded-lg shadow-sm dark:bg-gray-700 w-2/3">
-                                  
-                                      <!-- Modal header -->
-                                      <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
-                                          <h1>
-                                              Liste des ingrédients
-                                            </h1>
-                                          <button type="button" class="text-red-500 text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
-                                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                                              </svg>
-                                              <span class="sr-only ">Close modal</span>
-                                          </button>
-                                      </div>
-
-                                      <!-- Modal body -->
-                                      <div class="p-4 md:p-5 space-y-4">
-                                          <table class="w-full text-sm text-left">
-                                              <thead class="text-xs uppercase">
-                                                  <tr>
-                                                      <th scope="col" class="px-6 py-3">Ingrédient</th>
-                                                      <th scope="col" class="px-6 py-3">Quantité</th>
-                                                      <th scope="col" class="px-6 py-3">Action</th>
-                                                  </tr>
-                                              </thead>
-                                              <tbody id="ingredientTable">
-                                                  <!-- Les ingrédients seront ajoutés ici dynamiquement -->
-                                              </tbody>
-                                          </table>
-                                          <div class="flex justify-between items-center mt-4">
-                                              <button id="prevPage" class="px-3 py-1 rounded" disabled>
-                                                  Précédent
-                                              </button>
-                                              <span id="pageInfo" class="text-sm text-gray-500"></span>
-                                              <button id="nextPage" class="px-3 py-1 rounded">
-                                                  Suivant
-                                              </button>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
+                  <!-- Sidebar masquée par défaut -->
+                  <div id="sidebar" class="fixed top-0 right-0 h-full w-80 bg-white shadow-lg transform translate-x-full transition-transform duration-300">
+                      <div class="p-4">
+                          <button id="close-sidebar" class="text-red-500 font-bold mb-4">Fermer</button>
+                          <h2 class="text-xl font-bold mb-4">Liste de Courses</h2>
+                          <div id="sidebar-content">
+                              <!-- La liste des recettes et le bouton PDF seront ajoutés ici dynamiquement -->
                           </div>
                       </div>
+                  </div>
   
               </li>
             </ul>

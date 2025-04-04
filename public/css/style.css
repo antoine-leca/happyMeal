@@ -115,10 +115,11 @@ img:hover + .recipe-title {
   opacity: 1;
   transition: transform 0.3s ease-in-out;
 }
-
+.container{
 img:hover{
   transform: scale(1.05);
   transition: transform 0.6s ease-in-out;
   opacity: 50%;
   filter: blur(10px);
+}
 }
