@@ -86,3 +86,15 @@ body {
     cursor: pointer;
     color: #b22222;
 }
+
+@media (max-width: 768px) {
+    .calendar {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
