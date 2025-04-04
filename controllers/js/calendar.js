@@ -75,11 +75,11 @@ function calendarApp() {
             if (!this.selectedRecipes[this.selectedDate]) {
                 this.selectedRecipes[this.selectedDate] = [];
             }
-            if (this.selectedRecipes[this.selectedDate].length < 3) {
+            if (this.selectedRecipes[this.selectedDate].length < 7) {
                 this.selectedRecipes[this.selectedDate].push(`${this.selectedType}: ${this.selectedRecipe}`);
                 this.closeModal();
             } else {
-                alert("Vous ne pouvez ajouter que 3 recettes par jour.");
+                alert("Vous ne pouvez ajouter que 7 recettes par jour.");
             }
         }
     };
@@ -121,6 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
         calendar.innerHTML = "";
         const firstDay = new Date(currentYear, currentMonth, 1).getDay();
         const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+        
 
         // Ajouter les jours vides
         for (let i = 0; i < firstDay; i++) {
@@ -169,12 +170,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!selectedRecipes[selectedDate]) {
             selectedRecipes[selectedDate] = [];
         }
-        if (selectedRecipes[selectedDate].length < 3) {
+        if (selectedRecipes[selectedDate].length < 7) {
             selectedRecipes[selectedDate].push(`${type}: ${name}`);
             recipeModal.style.display = "none";
             generateCalendar();
         } else {
-            alert("Vous ne pouvez ajouter que 3 recettes par jour.");
+            alert("Vous ne pouvez ajouter que 7 recettes par jour.");
         }
     });
 
