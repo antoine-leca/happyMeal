@@ -1,4 +1,4 @@
-fetch("../public/data.json")
+fetch("/happyMeal/public/data.json")
     .then(response => {
         if (!response.ok) {
             throw new Error("Erreur lors du chargement des données JSON");
@@ -94,11 +94,13 @@ fetch("../public/data.json")
                     const modalTime = document.getElementById("modal-time");
                     const modalIngredients = document.getElementById("modal-ingredients");
                     const modalSteps = document.getElementById("modal-steps");
+                    const modalImage = document.getElementById("modal-image");
 
                     modalTitle.textContent = recette.nom;
                     modalCategory.textContent = `Catégorie : ${recette.categorie}`;
                     modalTime.textContent = `Temps de préparation : ${recette.temps_preparation}`;
                     modalIngredients.textContent = `Ingrédients : ${recette.ingredients.map(ing => `${ing.nom} (${ing.quantite})`).join(", ")}`;
+                    modalImage.src = recette.images;
 
                     modalSteps.innerHTML = "";
                     recette.etapes.forEach((etape, index) => {
