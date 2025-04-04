@@ -17,6 +17,7 @@
     <script src="./controllers/js/template.js" defer></script>
     <script src="./controllers/js/shopping.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="./controllers/js/randomRecipes.js" defer></script>
    
     <title>Tasty</title>
 </head>
@@ -33,50 +34,16 @@
     </section>
         <h1>
     Recettes du moment
-        </h1>
-        <section class="container">
-            <div class="category_container">
-              <div class="content">
-                <img src="./public/assets/blurfoodone.png" width="content" height="content"  />
-                <img src="./public/assets/foodone.png" class="profile_image" alt="Profile" />
-                <div class="wrapper">           
-                  <div class="profile_quote">
-                    <a href="./views/recettes.html"><button class="seemore">Voir plus</button></a>
-                    <a href="#" class="flex items-center py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent text-black md:p-0 dark:text-black text-hover-sec">
-                      <span class="material-symbols-outlined">favorite</span>
-                  </div>
-                </div>
-              </div>
-              <div class="content">
-                <img src="./public/assets/blurfoodtwo.png" width="content" height="content"/>
-                <img src="./public/assets/foodtwo.png" class="profile_image" alt="Profile" />
-                <div class="wrapper">           
-                  <div class="profile_quote">
-                    <a href="./views/recettes.html"><button class="seemore">Voir plus</button></a>
-                    <a href="#" class="flex items-center py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent text-black md:p-0 dark:text-black text-hover-sec">
-                      <span class="material-symbols-outlined">favorite</span>
-                  </div>  
-                </div>
-              </div>
-              <div class="content">
-                <img src="./public/assets/blurfoodthree.png" width="content" height="content" />
-                <img src="./public/assets/foodthree.png" class="profile_image" alt="Profile" />
-                <div class="wrapper">           
-                  <div class="profile_quote">
-                    <a href="./views/recettes.html"><button class="seemore">Voir plus</button></a>
-                    <a href="#" class="flex items-center py-2 px-3 rounded-sm hover:bg-gray-100 md:hover:bg-transparent text-black md:p-0 dark:text-black text-hover-sec">
-                      <span class="material-symbols-outlined">favorite</span>
-                    </a>
-                  </svg>
-                  </div>
-                </div>
-              </div>
-             
+        </h1> 
+          <section class="container">
+            <div id="randomRecipes" class="category_container">          
+            </div>
+              <div class="seemore">
+                <a href="./views/recettes.html">
+                <button class="seemore">Voir plus</button>
+              </a>
             </div>
           </section>
-
-
-          <div id="recipeCards" class="recipe-cards"></div>
     </main>
 
     <footer>

@@ -170,12 +170,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!selectedRecipes[selectedDate]) {
             selectedRecipes[selectedDate] = [];
         }
-        if (selectedRecipes[selectedDate].length < 3) {
+        if (selectedRecipes[selectedDate].length < 7) {
             selectedRecipes[selectedDate].push(`${type}: ${name}`);
             recipeModal.style.display = "none";
             generateCalendar();
         } else {
-            alert("Vous ne pouvez ajouter que 3 recettes par jour.");
+            alert("Vous ne pouvez ajouter que 7 recettes par jour.");
         }
     });
 
