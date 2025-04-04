@@ -66,11 +66,7 @@ fetch("/happyMeal/public/data.json")
                 cta.appendChild(btn);
 
                 // Ajouter un bouton pour ajouter aux favoris
-                const favorisIcon = document.createElement("i");
-                favorisIcon.className = "fa-regular fa-heart";
-                favorisIcon.style.cursor = "pointer";
-                favorisIcon.addEventListener("click", () => ajouterAuxFavoris(recette));
-                divBtn.appendChild(favorisIcon);
+                
 
                 btn.addEventListener("click", () => {
                     const modal = document.getElementById("medium-modal");
@@ -119,7 +115,9 @@ fetch("/happyMeal/public/data.json")
                 icons.appendChild(icon1);
 
                 const icon2 = document.createElement("i");
-                icon2.setAttribute("class", "fa-solid fa-heart");
+                icon2.className = "fa-solid fa-heart";
+                icon2.style.cursor = "pointer";
+                icon2.addEventListener("click", () => ajouterAuxFavoris(recette));
                 icons.appendChild(icon2);
             }
         }
