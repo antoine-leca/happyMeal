@@ -2,17 +2,17 @@
     position: fixed;
     top: 0;
     right: 0;
-    height: 100%; /* Prend toute la hauteur de l'écran */
-    width: 400px; /* Largeur de la sidebar */
-    max-width: 90%; /* S'adapte aux petits écrans */
-    background-color: #ffffff; /* Couleur de fond blanche */
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Ombre légère */ /* Masque la sidebar par défaut */
-    transition: transform 0.3s ease-in-out; /* Animation fluide */
-    overflow-y: auto; /* Ajoute un défilement si le contenu dépasse */
-    z-index: 1000; /* Assure que la sidebar est au-dessus des autres éléments */
-    border-left: 1px solid #e5e7eb; /* Ajoute une bordure fine */
+    height: 100%;
+    width: 400px; 
+    max-width: 90%; 
+    background-color: var(--bg-sec);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); 
+    transition: translate 0.3s ease-in-out; 
+    overflow-y: auto; 
+    z-index: 1000;
+    border-left: 1px solid #e5e7eb; 
 }
 
 #sidebar.open {
-    transform: translateX(0); /* Affiche la sidebar */
+    transform: translateX(0);
 }
