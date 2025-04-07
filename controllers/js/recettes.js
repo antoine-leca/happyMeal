@@ -163,7 +163,7 @@ fetch("/happyMeal/public/data.json")
                 localStorage.setItem("favorites", JSON.stringify(favorites));
                 // alert("Recette ajoutée aux favoris !");
             } else {
-                // alert("Cette recette est déjà dans vos favoris.");
+                alert("Cette recette est déjà dans vos favoris.");
             }
         }
 
