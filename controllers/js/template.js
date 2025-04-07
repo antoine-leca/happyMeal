@@ -15,9 +15,9 @@ const header = `<header class="bg-main border-gray-200 dark:bg-main">
                 </li>
             </ul>
         </section>
-      <section class="flex gap-4">
+      <section class="w-full md:w-auto block md:flex gap-4">
         <div id="navbarParent" class="flex md:order-1">
-          <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
+          <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-color-sec text-sm p-2.5 me-1">
             <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
             </svg>
@@ -32,10 +32,10 @@ const header = `<header class="bg-main border-gray-200 dark:bg-main">
             </div>
             <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-black border border-black rounded-lg bg-sec focus:ring-black focus:border-black dark:bg-sec dark:border-black dark:placeholder-gray-400 dark:text-black dark:focus:ring-black dark:focus:border-black" placeholder="Recherche...">
           </div>
-          <div id="suggestions-navbar">
-              <!-- Suggestions de la barre de recherche générés dans search-navbar.js -->
+          <div id="suggestions-navbar" class="sm:hidden">
+              <!-- Suggestions de la barre de recherche générées dans search-navbar.js -->
           </div>
-          <button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-search" aria-expanded="false">
+          <button data-collapse-toggle="navbar-search" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-color-sec md:hidden" aria-controls="navbar-search" aria-expanded="false">
               <span class="sr-only">Open main menu</span>
               <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
@@ -49,18 +49,39 @@ const header = `<header class="bg-main border-gray-200 dark:bg-main">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                 </svg>
               </div>
-              <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
-              <div id="suggestions-navbar"></div>
-            </div>
-            <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-main md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
-            <li class="flex items-center">
-              <a href="/happyMeal/views/favoris.html" class="flex items-center py-2 px-3 rounded-sm hover:bg-main-hover md:hover:bg-main-hover text-black md:p-0 dark:text-black text-hover-sec">
-                <i class="fa-solid fa-heart"></i>
+              <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-black border border-black rounded-lg bg-sec focus:ring-black focus:border-black dark:bg-sec dark:border-black dark:placeholder-gray-400 dark:text-black dark:focus:ring-black dark:focus:border-black" placeholder="Recherche...">
+              </div>
+              <div id="suggestions-navbar">
+                <!-- Suggestions de la barre de recherche générées dans search-navbar.js -->
+              </div>
+            <ul class="flex flex-col h-full w-full p-4 md:p-0 mt-4 font-medium bg-main md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+            <li class="flex items-center justify-center md:hidden my-2">
+              <a href="/happyMeal/index.html" class="flex justify-center items-center py-2 px-3 rounded-sm hover:bg-main-hover md:hover:bg-main-hover text-black md:p-0 dark:text-black text-hover-sec gap-4">
+                <span>Accueil</span>
               </a>
             </li>
-              <li>
+            <li class="flex items-center justify-center md:hidden my-2">
+              <a href="/happyMeal/views/recettes.html" class="flex justify-center items-center py-2 px-3 rounded-sm hover:bg-main-hover md:hover:bg-main-hover text-black md:p-0 dark:text-black text-hover-sec gap-4">
+                <span>Recettes</span>
+              </a>
+            </li>
+            <li class="flex items-center justify-center md:hidden my-2">
+              <a href="/happyMeal/views/calendar.html" class="flex justify-center items-center py-2 px-3 rounded-sm hover:bg-main-hover md:hover:bg-main-hover text-black md:p-0 dark:text-black text-hover-sec gap-4">
+                <span>Calendrier</span>
+              </a>
+            </li>
+            <li class="flex items-center justify-center">
+              <a href="/happyMeal/views/favoris.html" class="flex justify-center items-center py-2 px-3 rounded-sm hover:bg-main-hover md:hover:bg-main-hover text-black md:p-0 dark:text-black text-hover-sec gap-4">
+                <i class="fa-solid fa-heart"></i>
+                <span class="md:hidden">Favoris</span>
+              </a>
+            </li>
+              <li class="flex items-center justify-center">
                   <!-- Icône pour ouvrir la sidebar -->
-                  <i id="open-sidebar" class="fa-solid fa-basket-shopping fa-lg" style="color: black;"></i>
+                  <a id="open-sidebar" class="flex justify-center items-center py-2 px-3 rounded-sm hover:bg-main-hover md:hover:bg-main-hover text-black md:p-0 dark:text-black text-hover-sec gap-4">
+                    <i class="fa-solid fa-basket-shopping mb-1"></i>
+                    <span class="md:hidden cursor-pointer">Liste de course</span>
+                  </a>
 
                   <!-- Sidebar masquée par défaut -->
                   <div id="sidebar" class="fixed top-0 right-0 h-full w-80 bg-white shadow-lg transform translate-x-full transition-transform duration-300">
