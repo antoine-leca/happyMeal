@@ -1,0 +1,22 @@
+#sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 400px; 
+    max-width: 90%; 
+    background-color: var(--bg-sec);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); 
+    transition: translate 0.3s ease-in-out; 
+    overflow-y: auto; 
+    z-index: 1000;
+    border-left: 1px solid #e5e7eb; 
+}
+
+#sidebar.open {
+    transform: translateX(0);
+}
+
+i {
+    cursor: pointer;
+}

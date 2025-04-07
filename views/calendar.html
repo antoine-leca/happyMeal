@@ -16,10 +16,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>Calendrier des Recettes</title>
     <link rel="stylesheet" href="../public/css/calendar.css">
+    <link rel="stylesheet" href="../public/css/modal.css">
     <script src="../controllers/js/calendar.js" defer></script>
     <script src="../controllers/js/search-navbar.js" defer></script>
     <script src="../controllers/js/template.js" defer></script>
+    <script src="../controllers/js/listecourse.js" defer></script>
     <script src="../controllers/js/search-navbar.js" defer></script>
+    
 </head>
 <body>
     <header>
@@ -28,15 +31,16 @@
     <div class="container">
         <h1 class="title">Calendrier des Recettes</h1>
 
-        <!-- Navigation du mois -->
-        <div class="month-navigation">
-            <button id="prevMonth" class="btn">Mois précédent</button>
-            <h1 id="monthYear" class="month-title"></h1>
-            <button id="nextMonth" class="btn">Mois suivant</button>
+        <!-- Navigation de la semaine -->
+        <div class="week-navigation">
+            <button id="prevWeek" class="btn">Semaine précédente</button>
+            <h1 id="weekRange" class="week-title"></h1>
+            <button id="nextWeek" class="btn">Semaine suivante</button>
         </div>
 
         <!-- Calendrier -->
         <div id="calendar" class="calendar"></div>
+        <div id="weekCalendar" class="calendar"></div>
 
         <!-- Modal -->
         <div id="recipeModal" class="modal">
