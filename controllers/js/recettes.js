@@ -120,7 +120,7 @@ fetch("/happyMeal/public/data.json")
                 icons.appendChild(icon1);
 
                 const icon2 = document.createElement("i");
-                icon2.setAttribute("class", "fa-solid fa-heart");
+                icon2.setAttribute("class", "fa-regular fa-heart");
                 icon2.style.cursor = "pointer";
                 icon2.addEventListener("click", () => {
                     ajouterAuxFavoris(recette);
@@ -168,11 +168,11 @@ fetch("/happyMeal/public/data.json")
             const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
             if (!favorites.some(fav => fav.nom === recette.nom)) {
                 favorites.push(recette);
-                localStorage.setItem("favorites", JSON.stringify(favorites));
+                localStorage.setItem("favorites", JSON.stringify(favorites)); }
                 // alert("Recette ajoutée aux favoris !");
-            } else {
-                alert("Cette recette est déjà dans vos favoris.");
-            }
+            // } else {
+            //     alert("Cette recette est déjà dans vos favoris.");
+            // }
         }
 
         // Fonction pour ajouter une recette à la liste de courses
